@@ -1,11 +1,11 @@
-#!/bin/bash
-# mkdir -p "${STEAMAPPDIR}" || true  
+!/bin/bash
+mkdir -p "${STEAMAPPDIR}" || true  
 
-# bash "${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "${STEAMAPPDIR}" \
-# 				+login anonymous \
-# 				+app_update "${STEAMAPPID}" \
-# 				+quit
-# cd "${STEAMAPPDIR}"
+bash "${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "${STEAMAPPDIR}" \
+				+login anonymous \
+				+app_update "${STEAMAPPID}" \
+				+quit
+cd "${STEAMAPPDIR}"
 SERVER_STARTUP_COMMAND=$(cat <<-EOM 
 				"${STEAMAPPDIR}/svends_run" -console \
 				-port "${SVENDS_PORT}" \
