@@ -12,10 +12,12 @@ VOLUME ${STEAMAPPDIR}
 
 RUN set -x \
 	# Install, update & upgrade packages
+	&& dpkg --add-architecture i386 \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		wget \
-		ca-certificates \
+		lib32stdc++6 \
+		libssl1.1:i386 \
 		lib32z1 \
 	&& mkdir -p "${STEAMAPPDIR}" \
 	# Add entry script
