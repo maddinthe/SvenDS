@@ -8,6 +8,7 @@ ENV STEAMAPPID 276060
 ENV STEAMAPP svends
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV DLURL https://raw.githubusercontent.com/maddinthe/SvenDS
+VOLUME ${STEAMAPPDIR} 
 
 RUN set -x \
 	# Install, update & upgrade packages
